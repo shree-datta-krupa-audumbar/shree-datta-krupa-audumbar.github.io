@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Floor Plan - Shri Audumbar Society</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="bramha.jpg">
 </head>
 <body>
     <header class="header">
@@ -31,16 +32,106 @@
                 <li><a href="board.html" class="nav-link">Board</a></li>
                 <li><a href="property.html" class="nav-link">Property Cards</a></li>
                 <li><a href="floorplan.html" class="nav-link">Floor Plan</a></li>
+                <li><a href="info.html" class="nav-link">Info Board</a></li>
+                <li><a href="notice.html" class="nav-link">Notice Board</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="container">
         <h2 style="margin: 2rem 0;">Floor Plan</h2>
-        <p>Content to be updated later.</p>
+        <div class="slideshow-container">
+            <div class="slide" id="slide1">
+                <img src="floor1.jpg" alt="Floor Plan 1">
+                <div class="slide-heading">Ground Floor Plan</div>
+            </div>
+            <div class="slide" id="slide2">
+                <img src="floor2.jpg" alt="Floor Plan 2">
+                <div class="slide-heading">First Floor Plan</div>
+            </div>
+            <div class="slide" id="slide3">
+                <img src="floor3.jpg" alt="Floor Plan 3">
+                <div class="slide-heading">Second Floor Plan</div>
+            </div>
+            <div class="nav-buttons">
+                <button onclick="changeSlide(-1)">Previous</button>
+                <button onclick="changeSlide(1)">Next</button>
+            </div>
+        </div>
     </main>
 
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        // Function to show the current slide
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        // Function to change the slide
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1; // Wrap around to the last slide
+            } else if (currentSlide >= slides.length) {
+                currentSlide = 0; // Wrap around to the first slide
+            }
+            showSlide(currentSlide);
+        }
+
+        // Show the first slide by default
+        showSlide(currentSlide);
+    </script>
+
     <script src="script.js"></script>
+    <style>
+         
+        
+        h2 {
+            text-align: center;
+            color: #444;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+        .slide {
+            display: none;
+        }
+        .slide img {
+            width: 100%;
+            max-height: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .slide-heading {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .nav-buttons {
+            margin-top: 10px;
+        }
+        .nav-buttons button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 16px;
+            color: white;
+            background-color: #1e3a8a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .nav-buttons button:hover {
+            background-color: #162c67;
+        }
+    </style>
+    </style>
 </body>
 </html>
 
