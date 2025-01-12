@@ -58,7 +58,7 @@ validCredentials.push(
     password: '02-06-1943' },
 
     { email: 'kaushalpujara89@gmail.com',
-    password: '' },
+    password: 'kiran' },
 
     { email: 'pritambhogate@gmail.com',
     password: '22-07-1976' },
@@ -88,13 +88,12 @@ validCredentials.push(
     password: '02-05-1963' },
 
     { email: 'ravisatra90@gmail.com',
-    password: '' },
+    password: 'satra' },
 
     { email: 'lp.leenapatil@gmail.com',
     password: '05-02-1936' },
 
-    { email: 'lp.leenapatil@gmail.com',
-    password: '05-02-1936' }
+    
 );
     
 
